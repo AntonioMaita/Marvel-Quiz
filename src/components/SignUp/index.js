@@ -2,6 +2,8 @@ import React, {useState, useContext} from 'react';
 import {FirebaseContext} from "../firebase";
 import {Link} from 'react-router-dom';
 
+
+
 const SignUp = (props) => {
 
     const firebase = useContext(FirebaseContext);
@@ -14,7 +16,7 @@ const SignUp = (props) => {
     }
 
     const [loginData, setLoginData] = useState(data);
-    const [error, setError] = useState('')
+    const [error, setError] = useState('');
     
     const handleChange = e => {
         setLoginData({...loginData, [e.target.id]: e.target.value});

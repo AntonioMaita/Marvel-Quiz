@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 
-const Quiz = () => {
+
+const Quiz = (props) => {
+    console.log(props.userData.pseudo);
     return (
         <div>
-            Quiz
+            <h2>Pseudo: {props.userData.pseudo}</h2>
         </div>
     )
 }
