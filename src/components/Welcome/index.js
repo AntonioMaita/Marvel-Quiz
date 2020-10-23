@@ -1,5 +1,5 @@
-import React, {useState, Fragment, useContext, useEffect}  from 'react'
-import {FirebaseContext} from '../firebase/'
+import React, {useState, Fragment, useContext, useEffect}  from 'react';
+import {FirebaseContext} from '../firebase/';
 import Logout from "../Logout";
 import Quiz from "../Quiz";
 
@@ -9,7 +9,7 @@ const Welcome = props => {
     const firebase = useContext(FirebaseContext);
 
     const [userSession, setUserSession] = useState(null);
-    const [userData, setUserData] = useState([]);
+    const [userData, setUserData] = useState({});
     
 
     useEffect(() => {
@@ -23,13 +23,15 @@ const Welcome = props => {
             .get()
             .then(doc => {
                 if (doc && doc.exists){
+                    
                 const myData = doc.data();
+                
                 setUserData(myData)
                 }
     
             })
             .catch( error => {
-                console.log(error)
+                console.log(error);
             })
     
         }
@@ -37,12 +39,13 @@ const Welcome = props => {
         return () => {
             listener()
         };
-    }, [userSession, firebase, props.history]);
+    }, [firebase, props.history, userData, userSession]);
+    
     
    
 
     
-    return userSession == null ? (
+    return userSession === null ? (
         <Fragment>
         <div className="loader"></div>
         <p>Loading...</p>

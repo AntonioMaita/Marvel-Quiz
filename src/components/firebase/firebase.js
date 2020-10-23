@@ -38,7 +38,9 @@ class Firebase {
 
     passwordReset = email =>  this.auth.sendPasswordResetEmail(email);
 
+    
     user = uid => this.db.doc(`users/${uid}`);
+    
     
 
     
