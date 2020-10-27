@@ -375,7 +375,7 @@ button[disabled]:hover {
 /* END SIGNUP - LOGIN - FORGETPASSWORD */
 
 /* LOADER */
-.loader {
+/* .loader {
   border: 10px solid var(--light-grey-color);
   border-radius: 50%;
   border-top: 10px solid var(--dark-red-color);
@@ -409,7 +409,7 @@ button[disabled]:hover {
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 /* END LOADER */
 
 /* LOGOUT SWITCH */
